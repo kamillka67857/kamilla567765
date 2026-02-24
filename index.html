@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMarket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+
+<header>
+   <h1>TechMarket</h1>
+    <button id="favorites-view-btn">❤️ Избранное (<span id="fav-count">0</span>)</button>
+</header>
+
+<!-- Первая строка: фильтры и категории -->
+<div class="top-filters">
+    <select id="categoryFilter">
+        <option value="all">Все категории</option>
+        <option value="smartphone">Смартфоны</option>
+        <option value="laptop">Ноутбуки</option>
+        <option value="accessory">Аксессуары</option>
+    </select>
+    <select id="priceFilter">
+        <option value="all">Любая цена</option>
+        <option value="low">До 55 000 ₽</option>
+        <option value="medium">55 000 - 75 000 ₽</option>
+        <option value="high">Более 75 000 ₽</option>
+    </select>
+</div>
+
+<!-- Вторая строка: поиск -->
+<div class="top-search">
+    <input type="text" id="search" placeholder="Поиск товаров...">
+</div>
+
+<main>
+    <section class="product-list">
+        <!-- Пример карточки товара -->
+        <div class="product-card" data-category="smartphone" data-price="52390">
+           <button class="favorite-btn">🤍</button>
+            <img src="images/phone1.jpg" alt="Смартфон">
+            <div class="product-info">
+                <h2>Смартфон Apple iPhone 16 128 ГБ бирюзовый</h2>
+                <p class="description">Современный смартфон с камерой 50MP и аккумулятором 5000mAh.</p>
+                <p class="price">52 390 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+        </div>
+ <div class="product-card" data-category="smartphone" data-price="68390">
+          <button class="favorite-btn">🤍</button>
+    <img src="images/phone2.jpg" alt="Смартфон">
+            <div class="product-info">
+                <h2>Смартфон Apple iPhone 17 256 ГБ голубой</h2>
+                <p class="description">Современный смартфон с камерой 50MP и аккумулятором 5000mAh.</p>
+                <p class="price">68 390 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="smartphone" data-price="53390">
+          <button class="favorite-btn">🤍</button>
+            <img src="images/phone3.jpg" alt="Смартфон">
+            <div class="product-info">
+                <h2>Смартфон Apple iPhone 15 256 ГБ голубой</h2>
+                <p class="description">Современный смартфон с камерой 50MP и аккумулятором 5000mAh.</p>
+                <p class="price">53 390 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="laptop" data-price="139490">
+           <button class="favorite-btn">🤍</button>
+            <img src="images/laptop1.jpg" alt="Ноутбук">
+            <div class="product-info">
+                <h2>Ноутбук Apple MacBook Pro 14" (M4, 2024) 10 Core GPU, 16 ГБ, 512 ГБ, серебристый, MW2W3</h2>
+                <p class="description">Мощный ноутбук с процессором i7 и 16GB RAM.</p>
+                <p class="price">139 490 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+        </div>
+<div class="product-card" data-category="laptop" data-price="77890">
+           <button class="favorite-btn">🤍</button>
+    <img src="images/laptop2.jpg" alt="Ноутбук">
+            <div class="product-info">
+                <h2>Ноутбук Apple MacBook Air 13" (M4, 2025) 10C CPU/8C GPU, 16ГБ, 256 ГБ SSD, голубое небо, MC6T4</h2>
+                <p class="description">Мощный ноутбук с процессором i7 и 16GB RAM.</p>
+                <p class="price">77 890 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="laptop" data-price="73390">
+            <button class="favorite-btn">🤍</button>
+            <img src="images/laptop3.jpg" alt="Ноутбук">
+            <div class="product-info">
+                <h2>Ноутбук Apple MacBook Air 13.6" (M2, 2022) 8 Core GPU, 8 ГБ, 256 ГБ SSD, серый космос, MLXW3</h2>
+                <p class="description">Мощный ноутбук с процессором i7 и 16GB RAM.</p>
+                <p class="price">73 390 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessory" data-price="42830">
+           <button class="favorite-btn">🤍</button>
+            <img src="images/headphones.jpg" alt="Наушники">
+            <div class="product-info">
+                <h2>Наушники Apple AirPods Max USB-C полуночный черный MWW43</h2>
+                <p class="description">Беспроводные наушники с шумоподавлением.</p>
+                <p class="price">42 830 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessory" data-price="10390">
+           <button class="favorite-btn">🤍</button>
+            <img src="images/headphones1.jpg" alt="Наушники">
+            <div class="product-info">
+                <h2>Наушники Apple AirPods 4 белые</h2>
+                <p class="description">Беспроводные наушники с шумоподавлением.</p>
+                <p class="price">10 390 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+         </div>
+        <div class="product-card" data-category="accessory" data-price=" 2190">
+           <button class="favorite-btn">🤍</button>
+            <img src="images/headphones2.jpg" alt="Наушники">
+            <div class="product-info">
+                <h2>Кабель Apple USB-С/Lightning, 1м, Белый MM0A3</h2>
+                <p class="description">Беспроводные наушники с шумоподавлением.</p>
+                <p class="price">2 190 ₽</p>
+               <button class="cart-icon-btn">🛒</button>
+            </div>
+            </div>
+            <div class="product-card" data-category="accessory" data-price="4390">
+            <button class="favorite-btn">🤍</button>
+                <img src="images/headphones3.jpg" alt="Наушники">
+            <div class="product-info">
+                <h2>Беспроводная метка Apple AirTag MX532</h2>
+                <p class="description">Беспроводные наушники с шумоподавлением.</p>
+                <p class="price">4 390 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+            </div>
+            <div class="product-card" data-category="accessory" data-price="4490">
+            <button class="favorite-btn">🤍</button>
+                <img src="images/headphones4.jpg" alt="Наушники">
+            <div class="product-info">
+                <h2>Magssory Кардхолдер с геометкой (черный кожа)</h2>
+                <p class="description">Беспроводные наушники с шумоподавлением.</p>
+                <p class="price">4 490 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+            </div>
+            <div class="product-card" data-category="accessory" data-price="1190">
+            <button class="favorite-btn">🤍</button>
+                <img src="images/headphones5.jpg" alt="Наушники">
+            <div class="product-info">
+                <h2>Держатель для телефона на Ноутбук</h2>
+                <p class="description">Беспроводные наушники с шумоподавлением.</p>
+                <p class="price">1 190 ₽</p>
+                <button class="cart-icon-btn">🛒</button>
+            </div>
+            </div>
+</main>
+
+<!-- Плавающая корзина -->
+<div class="cart">
+    <button id="cart-btn">🛒 Корзина (<span id="cart-count">0</span>)</button>
+    <div class="cart-content" id="cart-content">
+        <ul id="cart-items"></ul>
+        <p>Итого: <span id="cart-total">0</span> ₽</p>
+        <button id="checkout-btn">Оформить заказ</button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 TechMarket</p>
+</footer>
+<!-- Панель избранного -->
+<div id="favorites-panel" class="side-panel">
+    <div class="panel-header">
+        <h2>Избранное</h2>
+        <button id="close-favorites">✖</button>
+    </div>
+    <div id="favorites-items"></div>
+</div>
+
+<div id="overlay"></div>
+<!-- Панель корзины -->
+<div id="cart-panel" class="side-panel">
+    <div class="panel-header">
+        <h2>Корзина</h2>
+        <button id="close-cart">✖</button>
+    </div>
+    <div id="cart-items-panel"></div>
+    <p>Итого: <span id="cart-total-panel">0</span> ₽</p>
+    <button id="checkout-panel">Оформить заказ</button>
+</div>
+<!-- Кнопка открытия чата -->
+<button id="chat-btn" class="chat-open-btn">💬 Чат поддержки</button>
+
+<!-- Панель чата поддержки -->
+<div id="chat-panel" class="side-panel">
+    <div class="panel-header">
+        <h2>Чат поддержки</h2>
+        <button id="close-chat">✖</button>
+    </div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <div class="chat-input">
+        <input type="text" id="chat-text" placeholder="Напишите сообщение...">
+        <button id="chat-send">Отправить</button>
+    </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+
+</html>
